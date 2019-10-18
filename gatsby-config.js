@@ -5,5 +5,44 @@
  */
 
 module.exports = {
-  /* Your site config here */
+  siteMetadata: {
+    title: 'Eurostar site',
+    author: 'EuroStar',
+
+  },
+  plugins: [
+    {
+      resolve: 'gatsby-source-drupal',
+      options: {
+        baseUrl: 'http://localhost:8888/esfwindows_upgrade_8/'
+      }
+
+    },
+    'gatsby-plugin-sass',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'src',
+        path: `${__dirname}/src/`
+      }
+    },
+    'gatsby-image',
+    'gatsby-plugin-sharp',
+    `gatsby-transformer-sharp`,
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          'gatsby-remark-relative-images',
+          {
+            resolve: 'gatsby-remark-images', 
+            options: {
+              maxWidth: 750,
+              linkImagesToOriginal: false
+            }
+          }
+        ]
+      }
+    }
+  ]
 }
