@@ -1,12 +1,7 @@
 import React from 'react'
-
 import { Link, graphql, useStaticQuery } from 'gatsby'
-
 import Layout from '../components/Layout'
-
 import blogStyles from './blog.module.scss'
-
-
 
 
 const BlogPage = () => {
@@ -55,15 +50,12 @@ const BlogPage = () => {
 
                 {data.allNodeArticle.edges.map((edge) => (
                     <nav>
-                        
                         <li className={blogStyles.post}>
                         <Link to={`/blog/${edge.node.id}`} >
                             <h1 className={blogStyles.post}>{edge.node.title}</h1>
-                            <p>{edge.node.created}</p>
-                            
+                            <p>{edge.node.created}</p> 
                         </Link>
                         </li>
-                       
                     </nav>
                 ))}
 

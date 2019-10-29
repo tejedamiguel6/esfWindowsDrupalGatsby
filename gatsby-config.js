@@ -6,7 +6,7 @@
 
 module.exports = {
   siteMetadata: {
-    title: 'Eurostar site',
+    title: 'Eurostar',
     author: 'EuroStar',
 
   },

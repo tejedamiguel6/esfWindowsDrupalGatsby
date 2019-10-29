@@ -1,20 +1,205 @@
 import React from 'react'
-import { Link } from 'gatsby'
-
 import Layout from '../components/Layout'
 
+import { Link, graphql, useStaticQuery } from 'gatsby'
+import Img from 'gatsby-image'
 
-const IndexPage = () => {
-    return (
-        <Layout>
-            <h3>This is the index/home page</h3>
-            <p>Drupal Backend reactjs Frontend</p>
-            <p>News Read out News
-                <Link to='/blog'> Read our blog</Link>
-            </p>
-            <p>Check out our Linkedin <a  target="_blank" href='https://www.linkedin.com/company/eurostar-fenestration-llc'>EuroStar</a></p>
-        </Layout>
-    )
+
+// export const query = graphql`
+//     query {
+//     nodeArticle(title: { eq: "Welcome to ESF Windows" }) {
+//         title
+//         body {
+//         value
+//         }
+//         relationships {
+//         field_image {
+//             localFile {
+//             childImageSharp {
+//                 fixed(width: 970, height: 400) {
+//                 ...GatsbyImageSharpFixed
+//                 }
+//             }
+//             }
+//         }
+//         }
+//     }
+// }
+// `
+
+
+
+// New updated query with a basic page 
+export const query = graphql`
+   query {
+  nodePage(title: { eq: "Home Page Welcome to ESF WINDOWS" }) {
+    title
+    body {
+      value
+    }
+    relationships {
+      field_basic_page_image {
+        relationships {
+          node__page {
+            relationships {
+              field_basic_page_image {
+                localFile {
+                  childImageSharp {
+                    fixed(width: 970, height: 400) {
+                      ...GatsbyImageSharpFixed
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
-export default IndexPage;
+
+`
+
+const IndexPage = ( { data }) => {
+    const post = data.nodePage
+
+    console.log(post)
+    return (
+        <Layout>
+
+            <div>
+                <Img 
+                    style={{
+                        marginTop: '60px',
+                        backgroundSize: 'cover',
+                        left: 0,
+                        top: 0,
+                        width: '100%',
+                    }}
+                    fixed={ post.relationships.field_basic_page_image[0].relationships.node__page[0].relationships.field_basic_page_image[0].localFile.childImageSharp.fixed } /> 
+            </div>
+            <h1 div className='homeTitle'>
+                {post.title}
+            </h1>
+            <div className='bio'>
+                <div dangerouslySetInnerHTML= {{ __html: post.body.value}}></div>
+            
+            </div>
+
+
+            <div className='block-one'>
+
+
+            </div>
+
+
+
+
+
+            
+
+        </Layout>
+    )
+
+}
+
+
+
+
+
+export default IndexPage
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const IndexPage = () => {
+
+//     const data = useStaticQuery(graphql`
+//     query {
+//     allNodeArticle {
+//         edges {
+//         node {
+//             id
+//             title
+//             body {
+//             value
+//             }
+//             created
+//             relationships {
+//             field_image {
+//                 localFile {
+//                 childImageSharp {
+//                     fluid(maxWidth: 400, quality: 100) {
+//                     base64
+//                     presentationWidth
+//                     presentationHeight
+//                     src
+//                     srcSet
+//                     }
+//                 }
+//                 }
+//             }
+//             }
+//         }
+//         }
+//         }
+//     }
+// `)
+
+// console.log(data)
+
+
+//     return (
+//         <Layout>
+//             <h2>Home page</h2>
+
+//             <ol>
+//                 {data.allNodeArticle.edges.map((edge) => (
+//                     <li>
+//                         <h1>
+//                         {edge.node.title}
+//                         </h1>
+
+//                     </li>
+                    
+//                 ))}
+
+
+                
+//             </ol>
+           
+//         </Layout>
+//     )
+// }
+
+// export default IndexPage;

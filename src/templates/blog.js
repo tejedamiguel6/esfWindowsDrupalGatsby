@@ -1,9 +1,7 @@
 import React from 'react'
 import Layout from '../components/Layout'
-
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
-
 
 
 // export const query = graphql`
@@ -42,50 +40,35 @@ export const query = graphql`
   }
 }
 `
-console.log(query)
+
 
 export default ({ data }) => {
-  const post = data.nodeArticle
-  const blogImage = post.relationships.field_image.localFile.childImageSharp.fluid
 
-  console.log('here is the image', blogImage)
+  const post = data.nodeArticle
+  const image = data.nodeArticle.relationships.field_image
+
+  console.log('here is the image', post)
   return (
     <Layout>
-      <div>
-        <h1>title: {post.title}</h1>
-        
-        <small>
+      
+    <div>
+        <h1>{post.title}</h1>
+         {image ? (
+           <div>
+            <div dangerouslySetInnerHTML={{ __html: post.body.value }}></div>
+            <Img fluid={ post.relationships.field_image.localFile.childImageSharp.fluid } />
+           </div>
+         ) : 
+         <div dangerouslySetInnerHTML={{ __html: post.body.value }}></div>
+
+         }
+          <small>
           <em>
             { Date(post.created) }
           </em>
         </small>
-          {/* {JSON.stringify(post, undefined, 4)} */}
-
-          <div dangerouslySetInnerHTML={{ __html: post.body.value }}></div>
-          
-
-          {JSON.stringify(post, undefined, 50)}
-
-          
-
-
-        
-          
-
-
-          
-    
-
-
-          { /* 
-          { blogImage ? <Img fluid={ post.relationships.field_image.localFile.childImageSharp.fluid } />  
-          : <div dangerouslySetInnerHTML={{ __html: post.body.value }}></div>
-          }
-           */}    
-         
-            {/* <Img fluid={ post.relationships.field_image.localFile.childImageSharp.fluid } />  */}
  
-      </div>
+    </div>
     </Layout>
   )
 }

@@ -16,14 +16,16 @@ const Header = () => {
     `)
 
     return (
-        <header className={headerStyles.header}>
-            <h1>
-                <Link 
-                    className={headerStyles.title} 
-                    to='/'>
-                    {data.site.siteMetadata.title}
-                </Link>
-            </h1>
+        <div>
+            <header className={headerStyles.header}>
+                {/* <h1>
+                    <Link 
+                        className={headerStyles.title} 
+                        to='/'>
+                        {data.site.siteMetadata.title}
+                    </Link>
+                </h1> */}
+            </header>
             <nav>
                 <ul className={headerStyles.navList}>
                     <li>
@@ -54,8 +56,8 @@ const Header = () => {
 
                 </ul>
             </nav>
-            
-        </header>
+        </div>    
+       
     )
 }
 
