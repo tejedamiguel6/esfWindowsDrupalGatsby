@@ -1,5 +1,6 @@
 import React from 'react'
 import Layout from '../components/Layout'
+import FrontBlock from '../components/FrontBlocks'
 
 import { Link, graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
@@ -28,11 +29,10 @@ import Img from 'gatsby-image'
 // `
 
 
-
 // New updated query with a basic page 
 export const query = graphql`
    query {
-  nodePage(title: { eq: "Home Page Welcome to ESF WINDOWS" }) {
+  nodePage(title: { eq: "Welcome to ESF Windows" }) {
     title
     body {
       value
@@ -58,8 +58,6 @@ export const query = graphql`
     }
   }
 }
-
-
 `
 
 const IndexPage = ( { data }) => {
@@ -85,29 +83,18 @@ const IndexPage = ( { data }) => {
             </h1>
             <div className='bio'>
                 <div dangerouslySetInnerHTML= {{ __html: post.body.value}}></div>
-            
             </div>
-
-
             <div className='block-one'>
-
-
             </div>
+            <hr></hr>
 
+            <FrontBlock />
 
-
-
-
-            
-
+        
         </Layout>
     )
 
 }
-
-
-
-
 
 export default IndexPage
 

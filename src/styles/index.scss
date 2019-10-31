@@ -32,3 +32,22 @@ body {
 //   // border: 11px solid red;
 //   background: url('../images/villa_rich_093.jpg');
 // }
+
+// grid for index page
+
+.container {
+  display: grid;
+  margin-top: 50px;
+  grid-gap: 10px;
+  // border: 1px solid red;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(100px, auto);
+  margin: 0 auto;
+  grid-template-areas: "content content content";
+}
+
+@media(max-width: 1040px ) {
+  .container {
+    background: red;
+  }
+}

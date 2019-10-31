@@ -40,6 +40,9 @@ const BlogPage = () => {
         }
 `)
 
+// if not rendering images get rid off
+// unecessary image query 
+
     return (
         <Layout>
 
