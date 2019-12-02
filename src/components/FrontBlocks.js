@@ -3,7 +3,6 @@ import { Link, graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 
 
-
 const FrontBlock = () => {
     const data = useStaticQuery(graphql`
     query {
@@ -19,7 +18,7 @@ const FrontBlock = () => {
           field_accessories_image {
             localFile {
               childImageSharp {
-                fixed(width: 400, height: 400) {
+                fixed(width: 300, height: 300) {
                   ...GatsbyImageSharpFixed
                 }
               }
@@ -31,13 +30,12 @@ const FrontBlock = () => {
   }
 }
 `)
-console.log(data)
     return (
         <div>
             {/* {JSON.stringify(data, undefined, 8)} */}
             <div className='container'>
                 {data.allNodeAccesories.edges.map((edge) => (
-                    <ol>
+                    <ol className='hover'>
                         <nav>
                         <li className='item1'>
                             <Link to={`/accessories/${edge.node.id}`}>

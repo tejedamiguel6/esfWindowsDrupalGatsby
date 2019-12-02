@@ -35,19 +35,994 @@ body {
 
 // grid for index page
 
-.container {
-  display: grid;
+.item1-list {
+  list-style-type: none;
+}
+
+.item1 a {
+  text-decoration: none;
+  text-align: center;
+  font-size: 13px;
+
+}
+
+.item1 img {
+  border-radius: 150px;
+}
+
+.item a {
+  text-decoration: none;
+}
+
+
+.second-main-content {
+  margin-top: 80px;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-around;
   margin-top: 50px;
-  grid-gap: 10px;
-  // border: 1px solid red;
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: minmax(100px, auto);
+  grid-auto-flow: dense;
+}
+
+.secondContentItems {
   margin: 0 auto;
-  grid-template-areas: "content content content";
+
+}
+
+.featureProjects {
+  font-family: "Nexa Bold", sans-serif!important;
+  text-align: center;
+  font-size: 2.6em;
+  margin-top: 200px;
+}
+
+
+
+// form styling
+form {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+}
+
+.form-container input {
+  display: block;
+  width: 100%;
+  padding: 14px 20px;
+  margin: 8px 0;
+  height: 34px;
+  color: #555555;
+  border-radius: 4px;
+  border: 1px solid #cccccc;
+
+
+}
+label {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.submit-form {
+  max-width: 70px;
+  align-items: center;
+}
+
+
+
+/*RAL Colour sample css */
+.colours .rb-temp {
+  line-height: 1.6;   
+  font-size: 17px;
+}
+
+.flex {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-around;
+}
+
+.colours  {
+/*    border: 1px solid red;*/
+  width: 16%;
+  padding: 5% 1.5%;  
+}
+
+.colours-items  {
+  list-style-type: none;
+  text-align: center;
+  height: 500px; 
+}
+
+.rb-temp {
+  font-size: 20px;
+  font-family: sans-serif;
+  color: #ebe5e5;
+}
+
+.ral-1000 {
+  background: #CDBA88;
+}
+
+.ral-1001 {
+  background: #D0B083;
+}
+
+.ral-1002 {
+  background: #D2AA6C;
+}
+
+.ral-1003 {
+  background:#F9A700  
+}
+
+.ral-1004 {
+  background: #E49E02;
+}
+
+.ral-1005 {
+  background: #CB8E00;
+}
+
+.ral-1006 {
+  background: #E29000;
+}
+
+.ral-1007 {
+  background: #E88C00;
+}
+
+.ral-1011 {
+  background: #AF804E;
+}
+
+.ral-1012 {
+  background: #DDAF27;
+}
+
+.ral-1013 {
+  background: #E2D9C6
+}
+
+.ral-1014 {
+  background: #DDC39A;
+}
+
+.ral-1015 {
+  background: #E6D2B5;
+}
+
+.ral-1016 {
+  background: #F0DC37;
+}
+
+.ral-1017 {
+  background: #F6A94F;
+}
+
+.ral-1018 {
+  background: #F9CA30;
+}
+
+.ral-1019 {
+  background: #A48E7B
+}
+
+.ral-1020 {
+  background: #A08F65;
+}
+
+.ral-1021 {
+  background: #F6B501;
+}
+
+.ral-1023 {
+  background: #F7B501;
+}
+
+.ral-1024 {
+  background: #BA8F4B;
+}
+
+.ral-1026 {
+  background: #FFFF00;
+}
+
+.ral-1027 {
+  background: #A77F0E
+}
+
+.ral-1028 {
+background: #FF9B00;   
+}
+
+.ral-1032 {
+  background: #E2A200;
+}
+
+.ral-1033 {
+  background: #FA991A;
+}
+
+.ral-1034 {
+  background: #EB9C52;
+}
+
+.ral-1035 {
+  background: #908370;
+}
+
+.ral-1036 {
+  background: #81643F;
+}
+
+.ral-1037 {
+  background: #F09202;
+}
+
+.ral-2000 {
+  background: #DA6E00;
+}
+
+.ral-2001 {
+  background: #B9481B;
+}
+
+.ral-2002 {
+  background: #BF3922;
+}
+
+.ral-2003 {
+  background: #F67728;
+}
+
+.ral-2004 {
+  background: #E15305;
+}
+
+.ral-2005 {
+  background: #FF4D08;
+}
+
+.ral-2007 {
+  background: #FFB201;
+}
+
+.ral-2008 {
+  background: #ED6B20;
+}
+
+.ral-2009 {
+  background: #DE5306;
+}
+
+
+.ral-2010 {
+  background: #D05D28;
+}
+
+.ral-2011 {
+  background: #E26E0F;
+}
+
+.ral-2012 {
+  background: #D5654D;
+}
+
+.ral-2013 {
+  background: #923E25;
+}
+
+.ral-3000 {
+  background: #923E25;
+}
+
+.ral-3001 {
+  background: #9A2423;
+}
+
+.ral-3002 {
+  background: #9A2320;
+}
+
+.ral-3003 {
+  background: #861922;
+}
+
+.ral-3004 {
+  background: #6B1C23;
+}
+
+.ral-3005 {
+  background: #59181E;
+}
+
+.ral-3007 {
+  background: #3E1F22
+}
+
+.ral-3009 {
+  background: #6D342D;
+}
+
+.ral-3011 {
+  background: #782422;
+}
+
+.ral-3012 {
+  background: #C6836D;
+}
+
+.ral-3013 {
+  background: #972D24;
+}
+
+.ral-3014 {
+  background: #CA7275;
+}
+
+.ral-3015 {
+  background: #D8A0A7;
+}
+
+.ral-3016 {
+  background: #A63E2F;
+}
+
+.ral-3017 {
+  background: #CC555D;
+}
+
+
+.ral-3018 {
+  background: #C73F4A;
+}
+
+.ral-3020 {
+  background: #BB1D0F
+}
+
+
+.ral-3022 {
+  background: #CF6856;
+}
+
+.ral-3024 {
+  background: #FF2E21;
+}
+
+.ral-3026 {
+  background: #FF2A1A;
+}
+
+.ral-3027 {
+  background: #AA273C;
+}
+
+.ral-3028 {
+  background: #CD2C23;
+}
+
+.ral-3031 {
+  background: #A53436;
+}
+
+.ral-3032 {
+  background: #701D23;
+}
+
+.ral-3033 {
+  background: #A53A2D;
+}
+
+.ral-4001 {
+  background: #816283;
+}
+
+
+.ral-4002 {
+  background: #8D3C4C;
+}
+
+.ral-4003 {
+  background: #C4618C;
+}
+
+
+.ral-4004 {
+  background: #651E38;
+}
+
+.ral-4005 {
+  background: #76679A;
+}
+
+.ral-4006 {
+  background: #903273;
+}
+
+.ral-4007 {
+  background: #47243C;
+}
+
+.ral-4008 {
+  background: #844C82;
+}
+
+.ral-4009 {
+  background: #9D8691;
+}
+
+.ral-4010 {
+  background: #BC3F77;
+}
+
+.ral-4011 {
+  background: #6E6387;
+}
+
+.ral-4012 {
+  background: #6B6B7E;
+}
+
+.ral-5000 {
+  background: #314F6F;
+}
+
+.ral-5001 {
+  background: #0E4C64;
+}
+
+.ral-5002 {
+  background: #00387C;
+}
+
+.ral-5003 {
+  background: #203855
+}
+
+
+.ral-5004 {
+  background: #191E28;
+}
+
+.ral-5005 {
+  background: #005486;
+}
+
+.ral-5007 {
+  background: #376A8C;
+}
+
+
+.ral-5008 {
+  background: #2A3A44;
+}
+
+.ral-5009 {
+  background: #225F78;
+}
+
+.ral-5010 {
+  background: #004E7B;
+}
+
+
+.ral-5011 {
+  background: #1A2C3B;
+}
+
+.ral-5012 {
+  background: #0189B6;
+}
+
+.ral-5013 {
+  background: #183152;
+}
+
+.ral-5014 {
+  background: #637D96;
+}
+
+.ral-5015 {
+  background: #007CAF;
+}
+
+.ral-5017 {
+  background: #005A8B;
+}
+
+.ral-5018 {
+  background: #038B8C;
+}
+
+
+.ral-5019 {
+  background: #015E83;
+}
+
+.ral-5020 {
+  background: #00414B;
+}
+
+.ral-5021 {
+  background: #017477;
+}
+
+.ral-5022 {
+  background: #212D5A;
+}
+
+.ral-5023 {
+  background: #42688C;
+}
+
+.ral-5024 {
+  background: #5F93AB;
+}
+
+.ral-5025 {
+  background: #21697D;
+}
+
+.ral-5026 {
+  background: #0F3051;
+}
+
+.ral-6000 {
+  background: #3C7460;
+}
+
+.ral-6001 {
+  background: #376735;
+}
+
+.ral-6002 {
+  background: #325829
+}
+
+.ral-6003 {
+  background: #50533B;
+}
+
+.ral-6004 {
+  background: #004441;
+}
+
+.ral-6005 {
+  background: #124331;
+}
+
+.ral-6006 {
+  background: #3B392E;
+}
+
+.ral-6007 {
+  background: #2C3121;
+}
+
+
+.ral-6008 {
+  background: #37352A;
+}
+
+.ral-6009 {
+  background: #27352A;
+}
+
+.ral-6010 {
+  background: #4D6F39;
+}
+
+.ral-6011 {
+  background: #6C7C58;
+}
+
+.ral-6012 {
+  background: #2F3D3A;
+}
+
+.ral-6013 {
+  background: #7E765A;
+}
+
+.ral-6014 {
+  background: #474135;
+}
+
+.ral-6015 {
+  background: #3D3D36;
+}
+
+.ral-6016 {
+  background: #00694C;
+}
+
+.ral-6017 {
+  background: #577F3F;
+}
+
+.ral-6018 {
+  background: #62993A;
+}
+
+.ral-6019 {
+  background: #B9CEAC;
+}
+
+
+.ral-6020 {
+  background: #374130;
+}
+.ral-6021 {
+  background: #8A9876;
+}
+
+.ral-6022 {
+  background: #3A3326;
+}
+
+.ral-6024 {
+  background: #008250;
+}
+
+.ral-6025 {
+  background: #5E6E3B;
+}
+
+.ral-6026 {
+  background: #005F4E;
+}
+
+.ral-6027 {
+  background: #7EBAB5;
+}
+
+.ral-6028 {
+  background: #315441;
+}
+
+.ral-6029 {
+  background: #016F3D;
+}
+
+.ral-6032 {
+  background: #227F52; 
+}
+
+.ral-6033 {
+  background: #46877F;
+}
+
+.ral-6034 {
+  background: #7AACAB;
+}
+
+.ral-6035 {
+  background: #1A4C25;
+}
+
+.ral-6036 {
+  background: #04564B;
+}
+
+.ral-6037 {
+  background: #008B28;
+}
+
+.ral-6038 {
+  background: #03B419;
+}
+
+.ral-7000 {
+  background: #7A888D;
+}
+.ral-7001 {
+  background: #8C969D;
+}
+
+.ral-7002 {
+  background: #807862;
+}
+
+.ral-7003 {
+  background: #797668;
+}
+
+.ral-7004 {
+  background: #9B9B9B;
+}
+
+.ral-7005 {
+  background: #6B6E6B;
+}
+
+.ral-7006 {
+  background: #776A5E
+}
+
+.ral-7008 {
+  background: #745E3C;
+}
+
+.ral-7009 {
+  background: #5C6058;
+}
+
+.ral-7010 {
+  background: #585D56;
+}
+
+.ral-7011 {
+  background: #51595D;
+}
+
+.ral-7012 {
+  background: #575E5E;
+}
+
+.ral-7013 {
+  background: #575044
+}
+
+.ral-7015 {
+  background: #4F5357;
+}
+
+.ral-7016 {
+  background: #383E41;
+}
+
+.ral-7021 {
+  background: #2E3235;
+}
+
+.ral-7022 {
+  background: #4C4A43;
+}
+
+.ral-7023 {
+  background: #808076;
+}
+
+.ral-7024 {
+  background: #45494E;
+}
+
+.ral-7026 {
+  background: #364346;
+}
+
+.ral-7030 {
+  background: #918E85;
+}
+
+.ral-7031 {
+  background: #5A686C;
+}
+
+.ral-7032 {
+  background: #B5B0A0;
+}
+
+.ral-7033 {
+  background: #7F8373;
+}
+
+.ral-7034 {
+  background: #918870;
+}
+
+.ral-7035 {
+  background: #C4C7C3;
+}
+
+.ral-7036 {
+  background: #979392;
+}
+
+.ral-7037 {
+  background: #797B7A;
+}
+
+.ral-7038 {
+  background: #AFB0A9;
+}
+
+.ral-7039 {
+  background: #6B665E;
+}
+
+.ral-7040 {
+  background: #989EA1;
+}
+
+.ral-7042 {
+  background: #8E9291;
+}
+
+.ral-7043 {
+  background: #4E524F;
+}
+
+.ral-7044 {
+  background: #B7B3A8;
+}
+
+.ral-7045 {
+  background: #8D9295;
+}
+
+.ral-7046 {
+  background: #7E8689;
+}
+
+.ral-7047 {
+  background: #C8C8C6;
+}
+
+.ral-7048 {
+  background: #817A73;
+}
+
+.ral-8000 {
+  background: #896A3D
+}
+
+.ral-8001 {
+  background: #9E622B;
+}
+
+.ral-8002 {
+  background: #794D3E;
+}
+
+.ral-8003 {
+  background: #7E4B26;
+}
+
+.ral-8004 {
+  background: #8D4931;
+}
+
+.ral-8007 {
+  background: #70462A;
+}
+
+.ral-8008 {
+  background: #724924;
+}
+
+.ral-8011 {
+  background: #5A3826;
+}
+
+.ral-8012 {
+  background: #66332A;
+}
+
+.ral-8014 {
+  background: #4A3626;
+}
+
+.ral-8015 {
+  background: #5E2E26;
+}
+
+.ral-8016 {
+  background: #4C2B1F;
+}
+
+.ral-8017 {
+  background: #443029;
+}
+
+.ral-8019 {
+  background: #3E3634;
+}
+
+
+.ral-8022 {
+  background: #191618;
+}
+
+
+.ral-8023  {
+  background: #A45629;
+}
+
+
+.ral-8024 {
+  background: #795038;
+}
+
+
+.ral-8025 {
+  background: #755846
+}
+
+.ral-8028 {
+  background: #503A29;
+}
+
+
+.ral-8029 {
+  background: #7F4031;
+}
+
+.ral-9001 {
+  background: #E9E0D1;
+}
+
+.ral-9002 {
+  background: #D8D5CB;
+}
+
+.ral-9003 {
+  background: #ECECE6;
+}
+
+.ral-9004 {
+  background: #2B2B2C;
+}
+
+.ral-9005 {
+  background: #0E0E0F;
+}
+
+.ral-9006 {
+  background: #A1A1A0
+}
+
+.ral-9007 {
+  background: #878580;
+}
+
+.ral-9010 {
+  background: #F0ECE1;
+}
+
+.ral-9011 {
+  background: #272A2B
+}
+
+.ral-9016 {
+  background: #F1F0EB
+}
+
+.ral-9017 {
+  background: #2B2A2A;
+}
+
+.ral-9018 {
+  background: #C7CBC4;
+}
+
+.ral-9022 {
+  background: #858583;
+}
+
+.ral-9023 {
+  background: #787B7A;
+}
+
+
+.container {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-around;
+  margin-top: 50px;
+  // grid-gap: 10px;
+  // border: 1px solid red;
+  // grid-template-columns: repeat(3, 1fr);
+  // grid-auto-rows: minmax(100px, auto);
+  // margin: 0 auto;
+  // grid-template-areas: "content content content";
 }
 
 @media(max-width: 1040px ) {
   .container {
-    background: red;
+    // background: red;
   }
 }

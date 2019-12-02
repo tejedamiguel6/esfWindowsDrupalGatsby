@@ -1,30 +1,25 @@
 import React from 'react'
 import Layout from '../components/Layout'
 import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
+
+
 
 
 export const query = graphql`
-query {
-  allNodeAccesories {
-    edges {
-      node {
-        id
-        title
-        body {
-          value
-        }
-        relationships {
-          field_accessories_image {
-            localFile {
-              childImageSharp {
-                fixed(width: 400, height: 400) {
-                  base64
-                  tracedSVG
-                  aspectRatio
-                  width
-                  height
-                }
-              }
+query($id: String!) {
+  nodeAccesories(id: { eq: $id }) {
+    id
+    title
+    body {
+      value
+    }
+    relationships {
+      field_accessories_image {
+        localFile {
+          childImageSharp {
+            fixed(width: 400, height: 400) {
+              ...GatsbyImageSharpFixed
             }
           }
         }
@@ -33,28 +28,28 @@ query {
   }
 }
 `
-const AccessoriesTemplate = ( { data }) => {
-    const post = data.allNodeAccesories
-    console.log('this is in the accessories page', post)
+const AccessoriesTemplate = ({ data }) => {
+    const post = data.nodeAccesories
+    const image = data.nodeAccesories.relationships
+    console.log('here is the image', post)
     return (
         <Layout>
-
             <div>
                 <h1>
-                    {post.id}
+                    {post.title}
                 </h1>
-            </div>
-            
-            <p>
-                {JSON.stringify(post, null, 5)}
-                
-            </p>
-
-
+                {image ? (
+                  <div>
+                    <div dangerouslySetInnerHTML={{ __html: post.body.value }}></div>
+                    <Img fixed={ post.relationships.field_accessories_image[0].localFile.childImageSharp.fixed } />
+                  </div>
+                ) :
+                <div dangerouslySetInnerHTML={{ __html: post.body.value }}></div>
+                }
+            </div> 
         </Layout>
 
     )
 }
-
 
 export default AccessoriesTemplate

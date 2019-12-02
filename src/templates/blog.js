@@ -47,11 +47,11 @@ export default ({ data }) => {
   const post = data.nodeArticle
   const image = data.nodeArticle.relationships.field_image
 
-  console.log('here is the image', post)
   return (
     <Layout>
       
     <div>
+      <h1>hello</h1>
         <h1>{post.title}</h1>
          {image ? (
            <div>

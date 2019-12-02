@@ -1,38 +1,16 @@
 import React from 'react'
 import Layout from '../components/Layout'
 import FrontBlock from '../components/FrontBlocks'
-
-import { Link, graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
-
-
-// export const query = graphql`
-//     query {
-//     nodeArticle(title: { eq: "Welcome to ESF Windows" }) {
-//         title
-//         body {
-//         value
-//         }
-//         relationships {
-//         field_image {
-//             localFile {
-//             childImageSharp {
-//                 fixed(width: 970, height: 400) {
-//                 ...GatsbyImageSharpFixed
-//                 }
-//             }
-//             }
-//         }
-//         }
-//     }
-// }
-// `
+import FrontBlockContentTwo from '../components/FrontBlockContentTwo'
+import Map from '../components/Maps'
 
 
 // New updated query with a basic page 
 export const query = graphql`
    query {
-  nodePage(title: { eq: "Welcome to ESF Windows" }) {
+    nodePage(title: { eq: "Welcome to ESF Windows" }) {
     title
     body {
       value
@@ -62,11 +40,8 @@ export const query = graphql`
 
 const IndexPage = ( { data }) => {
     const post = data.nodePage
-
-    console.log(post)
     return (
         <Layout>
-
             <div>
                 <Img 
                     style={{
@@ -76,7 +51,7 @@ const IndexPage = ( { data }) => {
                         top: 0,
                         width: '100%',
                     }}
-                    fixed={ post.relationships.field_basic_page_image[0].relationships.node__page[0].relationships.field_basic_page_image[0].localFile.childImageSharp.fixed } /> 
+                    fixed={post.relationships.field_basic_page_image[0].relationships.node__page[0].relationships.field_basic_page_image[0].localFile.childImageSharp.fixed } /> 
             </div>
             <h1 div className='homeTitle'>
                 {post.title}
@@ -87,10 +62,11 @@ const IndexPage = ( { data }) => {
             <div className='block-one'>
             </div>
             <hr></hr>
-
             <FrontBlock />
 
-        
+            <FrontBlockContentTwo />
+
+            <Map />
         </Layout>
     )
 
